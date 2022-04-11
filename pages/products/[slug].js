@@ -5,13 +5,13 @@ In getStaticProps we'll capture the slug from *context*.params and use this to f
 to find the document matching that specific slug value.
 Then we'll return the data of that entry as a prop.
 If the slug entered doesn't exist, then we'll return an empty props object
-*/
 
-/*
+
+
 When a page has dynamic routes and has getStaticProps, then it needs to use the getStaticPaths as well
 Here we define a list of paths that will be generated at build time
 Setting fallback:true trigers a static generation in the background for new entries
-*/
+
 
 import { useRouter } from 'next/router';
 import db from '../../utils/db';
@@ -73,3 +73,5 @@ export const getStaticProps = async (context) => {
 }
 
 export default Product;
+
+*/
