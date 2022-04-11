@@ -2,13 +2,13 @@
 // Execute with command node ./utils/db/import.js
 
 const admin = require('../../node_modules/firebase-admin');
-const serviceAccount = require("./serviceAccountKey.json");
 const data = require("../mock-data/users.json"); // File to be uploaded
 const collectionKey = "users"; // Name of the collection
 
 // Initializing firebase-admin SDK
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+    credential: admin.credential.cert(
+        JSON.parse(Buffer.from(process.env.FIREBASE_CONFIG_BASE_64, 'base64').toString('ascii'))),
     databaseURL: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
 });
 
