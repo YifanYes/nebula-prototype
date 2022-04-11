@@ -19,7 +19,12 @@ const Product = () => {
     // The slug is generated from the title variable through the dashify package
     const onSubmit = async () => {
         const { productName, description, price } = content;
-        await axios.post('/api/product', { productName, slug: dashify(productName), description, price });
+        await axios.post('/api/product', {
+            productName,
+            //slug: dashify(productName), 
+            description,
+            price
+        });
     }
 
     return (

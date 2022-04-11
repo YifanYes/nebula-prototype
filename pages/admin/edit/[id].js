@@ -37,7 +37,7 @@ const EditProduct = () => {
         const { productName, description, price } = content;
         console.log(id, productName, description, price);
         await axios.put(`/api/product/${id}`, {
-            slug: dashify(productName),
+            // slug: dashify(productName),
             productName,
             description,
             price
