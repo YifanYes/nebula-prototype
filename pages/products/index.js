@@ -9,13 +9,13 @@ import { useEffect, useState } from "react";
 
 const Products = (props) => {
   const [productCards, setProductCards] = useState([]);
-  const {productsData} = props;
+  const { productsData } = props;
 
   useEffect(() => {
     if (productsData) {
       setProductCards(
         productsData.map((card, index) => {
-          return <ProductCard key={`product_${index}`} values={card}/>
+          return <ProductCard key={`product_${index}`} values={card} />
         })
       );
     }
