@@ -37,7 +37,7 @@ const WishlistContextProvider = (props) => {
       }
     );
   }
-  console.log(items);
+
   return (
     <WishlistContext.Provider value={{items, addItem, removeItem}}>
       <ToastContainer/>
