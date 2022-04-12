@@ -1,11 +1,14 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from "react";
+import { useWishlistContext } from "../../contexts/wishlist_context";
+import { FaHeart, FaEye } from "react-icons/fa";
 //Import of Card Component styles storage
 import { ProductCardStyles, MemberCardStyles } from "./card.config";
-import PayWithMetamask from "../payWithMetamask";
+import PayWithMetamask from "../metamask_pay_btn/metamask_pay_btn";
 
 //This function generates the info of the Member Card Component => receives (styles and render values) => returns the structure
-export function MemberCard({ values, styles = MemberCardStyles }) {
+export const MemberCard = ({ values, styles = MemberCardStyles }) => {
   //Returns the structure
   return (
     <div className={styles.member_card}>
@@ -20,30 +23,23 @@ export function MemberCard({ values, styles = MemberCardStyles }) {
 }
 
 //This function generates the info of the Product Card Component => receives (styles and render values) => returns the structure
-export function ProductCard({ values, styles = ProductCardStyles }) {
-  const [cardStyle, setCardStyle] = useState('rotateZ(0deg) rotateY(0deg) rotateX(0deg)');
-
-  const handleMouseOver = (index) => {
-    setCardStyle('rotateZ(5deg) rotateY(20deg) rotateX(-20deg)');
-  }
-
-  const handleMouseLeave = () => {
-    setCardStyle('rotateZ(0deg) rotateY(0deg) rotateX(0deg)');
-  }
-
+export const ProductCard = ({ values, styles = ProductCardStyles }) => {
+  const { addItem } = useWishlistContext();
   //Returns the structure
   return (
-    <div className={styles.card_box} style={{ transform: cardStyle }} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+    <div className={styles.card_box}>
       <div className={styles.image_box}>
-        <Image src="/Nebula_White.png" width={180} height={180} className={styles.image} />
+        <Image src={values.image ? values.image : "/Nebula_White.png"} width={180} height={180} className={styles.image} />
       </div>
       <div className={styles.info_box}>
         <div className={styles.card_block}>
           <div className={styles.text}>{values.product_name}</div>
           <div className={styles.price}>{`${values.price} NEB`}</div>
         </div>
-        <PayWithMetamask />
       </div>
+      <a type="button" className={`${styles.button} right-14 top-4`} onClick={() => addItem(values.id, values.product_name, values.price, values.image)}><FaHeart/></a>
+      <PayWithMetamask styles={`${styles.button} right-4 top-4`}/>
+      <a type="button" className={`${styles.button} right-4 top-14`}><FaEye/></a>
       <div className={styles.shadow}></div>
     </div>
   );

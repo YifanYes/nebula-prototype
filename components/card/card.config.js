@@ -1,13 +1,14 @@
 //This constant stores the styles of all the elements of the Card Component
 export const ProductCardStyles = {
-  card_box: 'z-10 basis-[25%] grow-0 shrink cursor-pointer relative backdrop-blur-[2px] bg-gradient-to-tl from-black/20 to-white/20 hover:brightness-[3] hover:hue-rotate-30 rounded-xl transition-all duration-[0.5s] ease-in-out',
+  card_box: 'z-10 basis-[25%] grow-0 shrink relative backdrop-blur-[2px] bg-gradient-to-tl from-black/20 to-white/20 rounded-xl transition-all duration-[0.5s] ease-in-out',
   image_box: 'm-4 rounded-2xl flex justify-center items-center min-h-[180px]',
   info_box: 'w-full px-5 pb-4 pt-0 text-stone-400',
   card_block: 'w-full relative',
   distributor: 'max-w-[32ch] text-sm font-medium mb-2 truncate',
   price: 'absolute right-0 top-0 text-sm font-medium break-words',
   text: 'w-[calc(100%-50px)] text-sm font-medium break-words',
-  shadow: 'absolute top-4 left-4 bg-gradient-to-tl from-black/5 to-white/5 w-full h-full rounded-xl -z-10 shadow-[6px_6px_6px_0_rgba(0,0,0,0.5)] transition-all duration-[0.2s] ease-in-out',
+  button: 'absolute cursor-pointer text-stone-200 p-2 w-fit h-fit text-lg font-normal bg-black/40 rounded-lg transition-all duration-[0.25s] ease-in-out hover:text-orange-600',
+  shadow: 'absolute top-3 left-3 bg-gradient-to-tl from-black/5 to-white/5 w-full h-full rounded-xl -z-10 shadow-[6px_6px_6px_0_rgba(0,0,0,0.5)] transition-all duration-[0.2s] ease-in-out',
 };
 
 //This constant stores the styles of all the elements of the Card Component

@@ -1,9 +1,9 @@
 // Docs: https://docs.metamask.io/guide/sending-transactions.html#example
 
-import { Button } from "@nextui-org/react";
+import { FaShoppingCart } from "react-icons/fa";
 const Web3 = require("web3");
 
-const PayWithMetamask = () => {
+const PayWithMetamask = ({styles}) => {
 
     // Creates the a metamask transaction
     const sendTransaction = async () => {
@@ -30,9 +30,9 @@ const PayWithMetamask = () => {
     }
 
     return (
-        <Button color="gradient" auto onClick={sendTransaction}>
-            Pay Now
-        </Button>
+        <a type="button" className={styles} onClick={sendTransaction}>
+            <FaShoppingCart/>
+        </a>
     );
 };
 

@@ -33,7 +33,8 @@ export const layoutValues = {
     { href: '/nft', text: '02.NFTs' }, 
     { href: '/chat', text: '03.Chat' },
     { href: '/dao', text: '04.DAO' },
-    { href: '/profile', text: '05.Wallet' }
+    { href: '/profile', text: '05.Wallet' },
+    { href: '/wishlist', text: '06.Wishlist' }
   ],
 
   footer: [
