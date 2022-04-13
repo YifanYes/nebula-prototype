@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -14,10 +16,35 @@ export default function Navbar({ values, styles }) {
     if (window.ethereum) {
       await window.ethereum.request({ method: 'eth_requestAccounts' });
       window.web3 = new Web3(window.ethereum);
-      alert("Wallet connected successfully !");
+      toast(`Wallet connected successfully!`, 
+        {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: 'dark'
+        }
+      );
+      values.pop();
+      values.push({ href: '/profile', text: '05.User' });
+      values.push({ href: '/wishlist', text: '06.Wishlist' });
       return true;
     }
-    alert("No Wallet");
+    toast(`Couldn't connext to your wallet, please try again`, 
+      {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'dark'
+      }
+    );
     return false;
   }
 
@@ -41,6 +68,7 @@ export default function Navbar({ values, styles }) {
         })}
       </div>
       <div className={styles.right_spacer}></div>
+      <ToastContainer/>
     </div>
   );
 }

@@ -13,8 +13,8 @@ const Wishlist = () => {
       })}
     </div>
   ) : (
-    <div className={'flex justify-center items-center my-16'}>
-      ¿Aún no has guardado ningún producto?¡Encuentra algo que te guste y guárdalo para más tarde!
+    <div className={'flex justify-center items-center my-16 font-medium text-3xl text-center text-stone-300 drop-shadow-[4px_4px_4px_#000000]'}>
+      ¿Aún no has guardado ningún producto?<br/>¡Encuentra algo que te guste y guárdalo para más tarde!
     </div>
   );
 }

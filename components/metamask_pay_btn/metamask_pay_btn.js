@@ -1,4 +1,6 @@
 // Docs: https://docs.metamask.io/guide/sending-transactions.html#example
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { FaShoppingCart } from "react-icons/fa";
 const Web3 = require("web3");
@@ -27,10 +29,39 @@ const PayWithMetamask = ({styles}) => {
 
         // Create a view to redirect the user when the txHash exists
         console.log(txHash);
+
+        //Compra exitosa
+        /*toast(`La compra ha sido realizada con éxito`, 
+            {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: 'dark'
+            }
+        );*/
+
+        //Error en la compra
+        /*toast(`Se ha producido un error en el proceso de compra, por favor inténtelo de nuevo`, 
+            {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: 'dark'
+            }
+        );*/
     }
 
     return (
         <a type="button" className={styles} onClick={sendTransaction}>
+            <ToastContainer/>
             <FaShoppingCart/>
         </a>
     );
