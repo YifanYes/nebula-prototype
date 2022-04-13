@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -68,7 +68,6 @@ export default function Navbar({ values, styles }) {
         })}
       </div>
       <div className={styles.right_spacer}></div>
-      <ToastContainer/>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Background from "./components/background";
+import { ToastContainer } from 'react-toastify';
 import { useState } from "react";
 //Import of layout values and styles storage
 import { layoutValues, layoutStyles } from "./layout.config";
@@ -22,6 +23,7 @@ export default function Layout({ children, title = '?', description = '?', heade
     <div onMouseMove={handleMouseMove}>
       <Background values={values.background} styles={styles.background}/>
       <Navbar values={values.navbar} styles={styles.navbar}/>
+      <ToastContainer/>
       <div className="p-0 w-full">
         <Head>
           <title>Nebula | {title}</title>

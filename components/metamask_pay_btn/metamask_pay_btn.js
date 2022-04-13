@@ -1,5 +1,5 @@
 // Docs: https://docs.metamask.io/guide/sending-transactions.html#example
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { FaShoppingCart } from "react-icons/fa";
@@ -61,7 +61,6 @@ const PayWithMetamask = ({styles}) => {
 
     return (
         <a type="button" className={styles} onClick={sendTransaction}>
-            <ToastContainer/>
             <FaShoppingCart/>
         </a>
     );
